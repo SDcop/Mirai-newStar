@@ -1,7 +1,7 @@
-/*
- * @Author:shq
- * @UpdateDate:2022/07/23
- * @Title: 机器人行为组件
+/**
+ * @author:shq
+ * @updateDate:2022/07/23
+ * @title: 机器人行为组件
  */
 package org.example;
 import net.mamoe.mirai.contact.Contact;
@@ -11,15 +11,12 @@ import net.mamoe.mirai.event.SimpleListenerHost;
 import net.mamoe.mirai.event.events.*;
 import net.mamoe.mirai.message.data.Image;
 import net.mamoe.mirai.message.data.PlainText;
-import org.example.tools.PicIO;
+import org.example.units.PicIO;
 
 import java.io.*;
-import java.util.Base64;
 import java.util.Locale;
 
 public class FirstModule extends SimpleListenerHost {
-    //bot被@时的qq
-    private final String botAccount = "@392290694";
     /**对好友说你好*/
     @EventHandler
     private ListeningStatus sayHello(FriendMessageEvent event){
@@ -37,6 +34,8 @@ public class FirstModule extends SimpleListenerHost {
         String s = event.getMessage().contentToString();
         String sender = event.getSenderName().toString();
         System.out.println(s);
+        //bot被@时的qq
+        String botAccount = "@392290694";
         if(!s.contains(botAccount)){
             return ListeningStatus.LISTENING;
         }

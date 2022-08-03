@@ -10,10 +10,12 @@ import net.mamoe.mirai.console.plugin.PluginManager.INSTANCE.load
 import net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
 import net.mamoe.mirai.console.util.ConsoleExperimentalApi
 import net.mamoe.mirai.utils.BotConfiguration
+import org.example.common.InUseName
 
 fun setupWorkingDir() {
     // see: net.mamoe.mirai.console.terminal.MiraiConsoleImplementationTerminal
-    System.setProperty("user.dir", File("D:\\dev\\mcl").absolutePath)
+    val path = InUseName()
+    System.setProperty("user.dir", File(path.mclPath).absolutePath)
 }
 
 @ConsoleExperimentalApi
