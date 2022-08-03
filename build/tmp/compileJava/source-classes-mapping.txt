@@ -1,3 +1,8 @@
+org/example/CreateBot.java
+ org.example.CreateBot
+ org.example.CreateBot$1
+org/example/tools/PicIO.java
+ org.example.tools.PicIO
 org/example/Plugin.java
  org.example.Plugin
 org/example/FirstModule.java
