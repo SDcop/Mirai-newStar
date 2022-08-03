@@ -18,13 +18,21 @@ public class PicIO {
         File[] son = f.listFiles();
         if(son!=null){
             //随机一个数
-            Random random = new Random();
-            int index = random.nextInt(son.length-1);
+            int index = rand(son);
             picName = son[index].getName();
-            System.out.println(picName);
             nameList = picName.split("＊");
             image = ImageIO.read(son[index]);
-            System.out.println("字符长度"+nameList.length);
         }
+    }
+    public int rand(File[] list){
+        Random random = new Random();
+        int index = random.nextInt(list.length-1);
+        String name =list[index].getName();
+        int lastIndex=name.lastIndexOf(".")-1;
+        String suffix = name.substring(lastIndex);
+        if(!suffix.equals("jpg")&&!suffix.equals("png")){
+            rand(list);
+        }
+        return index;
     }
 }
